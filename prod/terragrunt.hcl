@@ -4,5 +4,5 @@ terraform {
 
 inputs = {
   output_dir = get_terragrunt_dir()
-  content = "Hello from dev, Terragrunt!"
+  content = "Hello from prod, Terragrunt!"
 }
