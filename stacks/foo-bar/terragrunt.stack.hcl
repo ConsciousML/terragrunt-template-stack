@@ -1,6 +1,6 @@
 unit "foo" {
     source = "git::git@github.com:ConsciousML/terragrunt-template-stack.git//units/foo"
-    path = "service"
+    path = "foo"
 
     values = {
 
@@ -11,7 +11,7 @@ unit "foo" {
 
 unit "bar" {
     source = "git::git@github.com:ConsciousML/terragrunt-template-stack.git//units/bar"
-    path = "service"
+    path = "bar"
 
     values = {
         output_dir = values.output_dir
