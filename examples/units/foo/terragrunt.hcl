@@ -3,7 +3,7 @@ include "root" {
 }
 
 terraform {
-    source = "../../.././/modules/dummy"
+    source = "${get_path_to_repo_root()}//modules/dummy"
 }
 
 inputs = {
