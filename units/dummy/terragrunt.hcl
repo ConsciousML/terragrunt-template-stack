@@ -1,5 +1,5 @@
 terraform {
-    source = "git@github.com:ConsciousML/terragrunt-template-stack.git//modules/dummy"
+    source = "git::git@github.com:ConsciousML/terragrunt-template-stack.git//modules/dummy"
 }
 
 inputs = {

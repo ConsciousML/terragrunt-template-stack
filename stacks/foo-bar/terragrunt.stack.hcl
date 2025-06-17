@@ -1,5 +1,5 @@
 unit "foo" {
-    source = "git@github.com:ConsciousML/terragrunt-template-stack.git//units/dummy"
+    source = "git::git@github.com:ConsciousML/terragrunt-template-stack.git//units/dummy"
     path = "service"
 
     values = {
