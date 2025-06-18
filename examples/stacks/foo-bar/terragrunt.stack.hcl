@@ -3,17 +3,17 @@ locals {
 }
 
 unit "foo" {
-    source = "../../units/foo"
+    source = "${get_repo_root()}/examples/units/foo"
     path = "foo"
 
     values = {
         output_dir = get_terragrunt_dir()
-        content = "Hello from foo, Terragrunt!"
+        content = "Testing dummy unit from examples directory"
     }
 }
 
 unit "bar" {
-    source = "../../units/bar"
+    source = "${get_repo_root()}/examples/units/bar"
     path = "bar"
 
     values = {
