@@ -1,5 +1,5 @@
 unit "foo" {
-  source = "git::git@github.com:ConsciousML/terragrunt-template-stack.git//units/foo?ref=v0.0.2"
+  source = "git::git@github.com:ConsciousML/terragrunt-template-stack.git//units/foo?ref=v0.0.3"
   path   = "foo"
 
   values = {
@@ -9,7 +9,7 @@ unit "foo" {
 }
 
 unit "bar" {
-  source = "git::git@github.com:ConsciousML/terragrunt-template-stack.git//units/bar?ref=v0.0.2"
+  source = "git::git@github.com:ConsciousML/terragrunt-template-stack.git//units/bar?ref=v0.0.3"
   path   = "bar"
 
   values = {
