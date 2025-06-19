@@ -8,7 +8,7 @@ locals {
 }
 
 terraform {
-  source = "git::git@github.com:ConsciousML/terragrunt-template-stack.git//modules/dummy?ref=v0.0.1"
+  source = "git::git@github.com:ConsciousML/terragrunt-template-stack.git//modules/dummy?ref=v0.0.2"
 }
 
 dependency "foo" {

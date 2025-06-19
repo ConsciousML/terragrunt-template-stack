@@ -1,5 +1,5 @@
 stack "foobar" {
-  source = "github.com/ConsciousML/terragrunt-template-stack//stacks/foo-bar?ref=v0.0.1"
+  source = "github.com/ConsciousML/terragrunt-template-stack//stacks/foo-bar?ref=v0.0.2"
   path   = "services"
 
   values = {
