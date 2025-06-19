@@ -3,20 +3,20 @@ locals {
 }
 
 unit "foo" {
-    source = "${get_repo_root()}/examples/units/foo"
-    path = "foo"
+  source = "${get_repo_root()}/examples/units/foo"
+  path   = "foo"
 
-    values = {
-        output_dir = get_terragrunt_dir()
-        content = "Testing dummy unit from examples directory"
-    }
+  values = {
+    output_dir = get_terragrunt_dir()
+    content    = "Testing dummy unit from examples directory"
+  }
 }
 
 unit "bar" {
-    source = "${get_repo_root()}/examples/units/bar"
-    path = "bar"
+  source = "${get_repo_root()}/examples/units/bar"
+  path   = "bar"
 
-    values = {
-        output_dir = get_terragrunt_dir()
-    }
+  values = {
+    output_dir = get_terragrunt_dir()
+  }
 }

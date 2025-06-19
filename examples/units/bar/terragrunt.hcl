@@ -3,12 +3,12 @@ include "root" {
 }
 
 locals {
-    environment_hcl = find_in_parent_folders("environment.hcl")
-    environment = read_terragrunt_config(local.environment_hcl).locals.environment
+  environment_hcl = find_in_parent_folders("environment.hcl")
+  environment     = read_terragrunt_config(local.environment_hcl).locals.environment
 }
 
 terraform {
-    source = "${get_path_to_repo_root()}//modules/dummy"
+  source = "${get_path_to_repo_root()}//modules/dummy"
 }
 
 dependency "foo" {
@@ -20,6 +20,6 @@ dependency "foo" {
 }
 
 inputs = {
-    content = "Foo content: ${dependency.foo.outputs.content} (${local.environment})"
-    output_dir = get_terragrunt_dir()
+  content    = "Foo content: ${dependency.foo.outputs.content} (${local.environment})"
+  output_dir = get_terragrunt_dir()
 }
