@@ -1,0 +1,1 @@
+content = "Testing dummy unit from examples directory"

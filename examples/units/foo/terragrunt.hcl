@@ -13,5 +13,6 @@ terraform {
 
 inputs = {
   #content = "Testing dummy unit from examples directory (${local.environment})"
+  content    = "${values.content} (${local.environment})"
   output_dir = get_terragrunt_dir()
 }

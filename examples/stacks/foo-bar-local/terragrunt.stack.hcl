@@ -8,7 +8,7 @@ unit "foo" {
 
   values = {
     output_dir = get_terragrunt_dir()
-    content    = "Testing dummy unit from examples directory"
+    content    = "Testing dummy units from examples stacks"
   }
 }
 
