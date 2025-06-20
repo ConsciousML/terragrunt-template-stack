@@ -3,7 +3,6 @@ Intended for users familiar with Terraform and why it is used.
 Read the [Terragrunt Quickstart](https://terragrunt.gruntwork.io/docs/getting-started/quick-start/).
 
 ## Installation
-
 To use this repository, you'll want to make sure you have the following installed:
 - [Terragrunt](https://terragrunt.gruntwork.io/docs/getting-started/install/)
 - [OpenTofu](https://opentofu.org/docs/intro/install/) (or [Terraform](https://developer.hashicorp.com/terraform/install))
@@ -20,6 +19,12 @@ mise install
 To be able to run pre-commits, install the following tools:
 - [tflint](https://github.com/terraform-linters/tflint#installation): lint your terraform code.
 - [Python](https://www.python.org/downloads/) to run the pre-commits.
+
+## CI
+The CI runs the pre-commit, `terragrunt stack generate` and `terragrunt stack run plan`.
+Then if the `run-terratest` label is not present, it fails.
+Otherwise, it runs terratest: create the infrastructure and test for expected outcome.
+This pattern is used to avoid having the CI create the infrastructure every time there is a new commit pushed on the pull request.
 
 ## TL;DR
 Terragrunt is a wrapper for Terraform that simplifies:
