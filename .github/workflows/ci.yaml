@@ -38,13 +38,20 @@ jobs:
           cd examples/stacks/foo-bar-local
           terragrunt stack generate
           terragrunt stack run plan
-      
-      - name: Check for 'run-terratest' label
-        id: label_check
-        uses: actions-ecosystem/action-has-label@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          label: run-terratest   # <--- this is the label name
+
+      - name: Check if PR has 'run-terratest' label
+        id: check_label
+        run: |
+          labels=$(gh pr view "$PR_NUMBER" --json labels -q '.labels[].name')
+          echo "Labels on PR: $labels"
+          if echo "$labels" | grep -qw "run-terratest"; then
+            echo "label_present=true" >> $GITHUB_OUTPUT
+          else
+            echo "The 'run-terratest' label is not present on this PR."
+            exit 1
+          fi
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }} 
 
        # Fail if label is missing
       - name: Fail if 'run-terratest' label is missing
@@ -55,5 +62,4 @@ jobs:
 
       # Run Terratest only if label present
       - name: Run Terratest
-        if: steps.label_check.outputs.has_label == 'true'
         run: go test -v ./tests/... -timeout 30m
