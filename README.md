@@ -5,9 +5,11 @@ Read the [Terragrunt Quickstart](https://terragrunt.gruntwork.io/docs/getting-st
 ## Installation
 
 To use this repository, you'll want to make sure you have the following installed:
-
 - [Terragrunt](https://terragrunt.gruntwork.io/docs/getting-started/install/)
 - [OpenTofu](https://opentofu.org/docs/intro/install/) (or [Terraform](https://developer.hashicorp.com/terraform/install))
+- [Go]()
+- [Python3.13.1]()
+- [tflint]()
 
 To simplify the process of installing these tools, you can install [mise](https://mise.jdx.dev/), then run the following to concurrently install all the tools you need, pinned to the versions they were tested with (as tracked in the [mise.toml](./mise.toml) file):
 ```bash

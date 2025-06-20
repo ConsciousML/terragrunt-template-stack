@@ -26,5 +26,11 @@ jobs:
       - name: Run pre-commit hooks
         uses: pre-commit/action@v3.0.1
 
+      - name: Run Terragrunt stack generate and plan
+        run: |
+          cd examples/stacks/foo-bar-local
+          terragrunt stack generate
+          terragrunt stack run plan
+
       - name: Run Terratest
         run: go test -v ./tests/... -timeout 30m
