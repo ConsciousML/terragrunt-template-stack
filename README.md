@@ -14,6 +14,11 @@ To simplify the process of installing these tools, you can install [mise](https:
 mise install
 ```
 
+## Pre-commit
+To be able to run pre-commits, install the following tools:
+- [tflint](https://github.com/terraform-linters/tflint#installation): lint your terraform code.
+- [Python](https://www.python.org/downloads/) to run the pre-commits.
+
 ## TL;DR
 Terragrunt is a wrapper for Terraform that simplifies:
   - keeping configs DRY (Don't Repeat Yourself)
