@@ -89,11 +89,13 @@ func TestDummyModule(t *testing.T) {
 
 Next setup the go module:
 ```bash
-go mod tidy
 go mod init github.com/ConsciousML/terragrunt-template-stack
 go get github.com/gruntwork-io/terratest/modules/terraform
 go get github.com/stretchr/testify/assert
+go mod tidy
 ```
 
 Run the test:
 ```bash
+go test ./tests/... -timeout 30m
+```

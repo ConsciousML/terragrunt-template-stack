@@ -25,3 +25,6 @@ jobs:
 
       - name: Run pre-commit hooks
         uses: pre-commit/action@v3.0.1
+
+      - name: Run Terratest
+        run: go test -v ./tests/... -timeout 30m
