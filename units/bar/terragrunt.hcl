@@ -16,7 +16,7 @@ dependency "foo" {
   mock_outputs = {
     content = "Mocked content from foo"
   }
-  mock_outputs_allowed_terraform_commands = ["plan"]
+  mock_outputs_allowed_terraform_commands = ["plan", "validate"]
 }
 
 inputs = {
