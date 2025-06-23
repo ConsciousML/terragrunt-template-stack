@@ -97,5 +97,5 @@ go mod tidy
 
 Run the test:
 ```bash
-go test ./tests/... -timeout 30m
+go test -v ./tests/... -timeout 30m
 ```
