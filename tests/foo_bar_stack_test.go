@@ -1,9 +1,10 @@
 package tests
 
 import (
-    "os/exec"
-    "testing"
-    "github.com/stretchr/testify/require"
+	"os/exec"
+	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func TestFooBarLocalStack(t *testing.T) {
@@ -11,6 +12,14 @@ func TestFooBarLocalStack(t *testing.T) {
 
     stackDir := "../examples/stacks/foo-bar-local"
 
+    // Ensure destroy runs at the end, even if the test fails
+    t.Cleanup(func() {
+        cmdDestroy := exec.Command("terragrunt", "--non-interactive", "stack", "run", "destroy")
+        cmdDestroy.Dir = stackDir
+        out, err := cmdDestroy.CombinedOutput()
+        require.NoError(t, err, "stack run destroy failed: %s", string(out))
+    })
+    
     // Generate
     cmdGenerate := exec.Command("terragrunt", "stack", "generate")
     cmdGenerate.Dir = stackDir
